@@ -40,5 +40,28 @@ def fizzbuzz(max_num)
   end
 end
 
+def fizzbuzzhash(max_num)
+  answer_hash = {}
+  answer_hash['fizz'] = []
+  answer_hash['buzz'] = []
+  answer_hash['fizzbuzz'] = []
+  answer_hash['other'] = []
+  for i in 1.upto(max_num) do
+    if i % 3 == 0
+      answer_hash['fizz'].push(i)
+    end
+    if i % 5 == 0
+      answer_hash['buzz'].push(i)
+    end
+    if i % 3 == 0 && i % 5 == 0
+      answer_hash['fizzbuzz'].push(i)
+    end
+    if i % 3 != 0 && i % 5 != 0
+      answer_hash['other'].push(i)
+    end
+  end
+  puts answer_hash
+end
+
 binding.pry
 ""
